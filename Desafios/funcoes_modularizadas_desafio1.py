@@ -77,7 +77,7 @@ def cpf_check(): # função para conferir se o cpf é formato válido
 
 def criar_cadastro():
     usuario = []
-    criar_cadastro = []
+    cadastros = []
     nome = str(input('Digite seu nome: ')).lower().capitalize().strip()
     nascimento = ler_nascimento() #chama a função para conferir a data de nascimento
     cpf = cpf_check() #chama a função cpf para conferir a data de nascimento
@@ -87,18 +87,16 @@ def criar_cadastro():
     n = int(input('Digite o número da sua residência: '))
     bairro = str(input('Digite o bairro onde mora: ')).lower().capitalize().strip()
     endereço = f'{rua},{n} - bairro:{bairro} - {cidade}/{estado}.'
-    for item in criar_cadastro:
+    for item in cadastros:
         print('teste de entrada')
         if cpf in item:
             print('CPF já cadastrado. Refaça o cadastro do CPF')
             usuario.clear
             cpf = cpf_check
     usuario = [nome,nascimento,cpf,endereço]
-    criar_cadastro.append(usuario[:])
-    
-    print(criar_cadastro)
+    cadastros.append(usuario[:])
     usuario.clear
-criar_cadastro()
+
 
 
 

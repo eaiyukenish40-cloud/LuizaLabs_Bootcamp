@@ -18,7 +18,9 @@ limite = 500
 extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
-criar_cadastro = []
+cadastros = []
+
+criar_cadastro()
 
 while True:
 
