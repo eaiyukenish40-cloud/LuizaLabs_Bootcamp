@@ -1,4 +1,4 @@
-def saque(limite,saldo,numero_saques,LIMITE_SAQUES,extrato):
+def saque(*,limite,saldo,numero_saques,limite_saques,extrato):
 
     valor = float(input("Informe o valor do saque: "))
 
@@ -17,7 +17,7 @@ def saque(limite,saldo,numero_saques,LIMITE_SAQUES,extrato):
         saldo -= valor
         extrato += f"Saque: R$ {valor:.2f}\n"
         numero_saques += 1
-        print(f'Saque de R${valor} realizado com sucesso. Saldo restante R${saldo}. Você pode sacar mais {LIMITE_SAQUES - numero_saques} vez(es)')
+        print(f'Saque de R${valor} realizado com sucesso. Saldo restante R${saldo}. Você pode sacar mais {limite_saques - numero_saques} vez(es)')
         return extrato,saldo,numero_saques
 
     else:
@@ -34,8 +34,12 @@ def deposito(saldo,extrato):
         print("Operação falhou! O valor informado é inválido.")
 
 
-def extrato_view(extrato,saldo):
+def extrato_view(extrato,/,*,saldo):
     print("\n================ EXTRATO ================")
     print("Não foram realizadas movimentações." if not extrato else extrato)
     print(f"\nSaldo: R$ {saldo:.2f}")
     print("==========================================")
+
+#def criar_cadastro():
+
+#def criar_conta_corrente():

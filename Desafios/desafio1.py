@@ -4,6 +4,7 @@ Criar uma nova função para cadastrar usuário (cliente).
 Criar uma nova função para cadastrar conta bancária'''
 
 from funcoes_modularizadas_desafio1 import saque,deposito,extrato_view
+''', criar_cadastro,criar_conta_corrente'''
 menu = """
 
 [d] Depositar
@@ -32,7 +33,7 @@ while True:
 
     elif opcao == "s":
         if numero_saques < LIMITE_SAQUES: # melhoria. Se o número de saque for excedido, não executa a função.
-            resultado_saque = saque(limite,saldo,numero_saques,LIMITE_SAQUES,extrato) # retorna extrato,saldo,numero_saques
+            resultado_saque = saque(limite=limite,saldo=saldo,numero_saques=numero_saques,limite_saques=LIMITE_SAQUES,extrato=extrato) # retorna extrato,saldo,numero_saques
             extrato = resultado_saque[0]
             saldo = resultado_saque[1]
             numero_saques = resultado_saque[2]
@@ -41,7 +42,7 @@ while True:
         
 
     elif opcao == "e":
-        extrato_view(extrato,saldo)
+        extrato_view(extrato,saldo=saldo)
 
     elif opcao == "q":
         break
