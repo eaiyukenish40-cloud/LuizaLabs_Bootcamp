@@ -3,7 +3,7 @@ Novas Funções:
 Criar uma nova função para cadastrar usuário (cliente).
 Criar uma nova função para cadastrar conta bancária'''
 
-from
+from funcoes_modularizadas_desafio1 import saque
 menu = """
 
 [d] Depositar
@@ -34,7 +34,7 @@ while True:
             print("Operação falhou! O valor informado é inválido.")
 
     elif opcao == "s":
-        saque(valor,saldo,numero_saques,LIMITE_SAQUES)
+        saque(limite,saldo,numero_saques,LIMITE_SAQUES)
 
     elif opcao == "e":
         print("\n================ EXTRATO ================")
