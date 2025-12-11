@@ -3,7 +3,7 @@ Novas Funções:
 Criar uma nova função para cadastrar usuário (cliente).
 Criar uma nova função para cadastrar conta bancária'''
 
-from funcoes_modularizadas_desafio1 import saque,deposito,extrato_view, criar_cadastro #criar_conta_corrente
+from funcoes_modularizadas_desafio1 import saque,deposito,extrato_view, criar_cadastro,criar_conta_corrente
 menu = """
 
 [d] Depositar
@@ -19,8 +19,9 @@ extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
 cadastros = []
+AGENCIA = '0001'
 
-criar_cadastro()
+criar_cadastro() #obs: necessário testar o laço for
 
 while True:
 

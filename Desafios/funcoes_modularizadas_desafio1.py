@@ -98,9 +98,6 @@ def criar_cadastro():
     usuario.clear
 
 
-
-
-
-
-
-#def criar_conta_corrente():
+def criar_conta_corrente():
+    conta = str(input('Digite o número da conta: '))
+    
