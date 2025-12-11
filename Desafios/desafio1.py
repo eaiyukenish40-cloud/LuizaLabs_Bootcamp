@@ -31,7 +31,7 @@ while True:
     
 
     elif opcao == "s":
-        if numero_saques < LIMITE_SAQUES:
+        if numero_saques < LIMITE_SAQUES: # melhoria. Se o número de saque for excedido, não executa a função.
             resultado_saque = saque(limite,saldo,numero_saques,LIMITE_SAQUES,extrato) # retorna extrato,saldo,numero_saques
             extrato = resultado_saque[0]
             saldo = resultado_saque[1]
