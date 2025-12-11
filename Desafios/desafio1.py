@@ -3,7 +3,7 @@ Novas Funções:
 Criar uma nova função para cadastrar usuário (cliente).
 Criar uma nova função para cadastrar conta bancária'''
 
-from funcoes_modularizadas_desafio1 import saque
+from funcoes_modularizadas_desafio1 import saque,deposito
 menu = """
 
 [d] Depositar
@@ -21,20 +21,22 @@ LIMITE_SAQUES = 3
 
 while True:
 
-    opcao = input(menu)
+    opcao = str(input(menu)).strip().lower()
 
     if opcao == "d":
-        valor = float(input("Informe o valor do depósito: "))
-
-        if valor > 0:
-            saldo += valor
-            extrato += f"Depósito: R$ {valor:.2f}\n"
-
-        else:
-            print("Operação falhou! O valor informado é inválido.")
+       resultado_deposito = deposito(saldo,extrato) # a função retorna um tupla
+       saldo = resultado_deposito[0]
+       extrato = resultado_deposito[1]
+       print(f'Depósito concluído com sucesso. R${saldo}')
+    
 
     elif opcao == "s":
-        saque(limite,saldo,numero_saques,LIMITE_SAQUES)
+        resultado_saque = saque(limite,saldo,numero_saques,LIMITE_SAQUES,extrato) # retorna extrato,saldo,numero_saques, valor
+        extrato = resultado_saque[0]
+        saldo = resultado_saque[1]
+        numero_saques = resultado_saque[2]
+        valor_saque = resultado_saque[3]
+        print(f'Saque de R${valor_saque} realizado com sucesso. Você pode sacar mais {LIMITE_SAQUES - numero_saques} vez(es)')
 
     elif opcao == "e":
         print("\n================ EXTRATO ================")

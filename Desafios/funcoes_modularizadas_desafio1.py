@@ -1,4 +1,5 @@
-def saque(limite,saldo,numero_saques,LIMITE_SAQUES):
+def saque(limite,saldo,numero_saques,LIMITE_SAQUES,extrato):
+
     valor = float(input("Informe o valor do saque: "))
 
     excedeu_saldo = valor > saldo
@@ -20,6 +21,17 @@ def saque(limite,saldo,numero_saques,LIMITE_SAQUES):
         saldo -= valor
         extrato += f"Saque: R$ {valor:.2f}\n"
         numero_saques += 1
+        return extrato,saldo,numero_saques, valor
 
+    else:
+        print("Operação falhou! O valor informado é inválido.")
+
+def deposito(saldo,extrato):
+    valor = float(input("Informe o valor do depósito: "))
+
+    if valor > 0:
+        saldo += valor
+        extrato += f"Depósito: R$ {valor:.2f}\n"
+        return saldo, extrato
     else:
         print("Operação falhou! O valor informado é inválido.")
