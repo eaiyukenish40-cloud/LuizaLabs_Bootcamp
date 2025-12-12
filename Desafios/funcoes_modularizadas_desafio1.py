@@ -77,26 +77,26 @@ def cpf_check(): # função para conferir se o cpf é formato válido
 
 def criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas):
     usuario = []
-    cadastros_clientes
+    cpf = cpf_check() #chama a função cpf para conferir a data de nascimento
+    for item in cadastros_clientes:
+        print('teste de entrada')
+        while cpf in item:
+            print('CPF já cadastrado. Tente novamente')
+            cpf = cpf_check()
     nome = str(input('Digite seu nome: ')).lower().capitalize().strip()
     nascimento = ler_nascimento() #chama a função para conferir a data de nascimento
-    cpf = cpf_check() #chama a função cpf para conferir a data de nascimento
     estado = check_estado(str(input('Digite o Estado onde mora (sigla): ')).upper().strip()[0:2])
     cidade = str(input('Digite a cidade onde mora: ')).lower().capitalize().strip()
     rua = str(input('Digite apenas o nome da rua onde mora: ')).lower().capitalize().strip()
     n = int(input('Digite o número da sua residência: '))
     bairro = str(input('Digite o bairro onde mora: ')).lower().capitalize().strip()
     endereço = f'{rua},{n} - bairro:{bairro} - {cidade}/{estado}.'
-    for item in cadastros_clientes:
-        print('teste de entrada')
-        if cpf in item:
-            print('CPF já cadastrado. Refaça o cadastro do CPF')
-            usuario.clear
-            cpf = cpf_check
     usuario = [nome,nascimento,cpf,endereço]
     cadastros_clientes.append(usuario[:])
+    print('Usuário Cadastrado com sucesso!')
     usuario.clear #limpa a lista temporária do usuário momentaneo após salvar no cadastro permanente
-    criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas,cadastros_clientes) # associa o novo usuário a uma nova conta
+    contas_cadastradas, conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas,cadastros_clientes) # associa o novo usuário a uma nova conta
+
     return conta_contador,contas_cadastradas,cadastros_clientes
 
 

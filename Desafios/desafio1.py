@@ -24,8 +24,13 @@ AGENCIA = '0001'
 conta_contador = 1
 
 
+'''
+conta_contador,contas_cadastradas,cadastros_clientes = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas) #obs: necessário testar o laço for
 
-criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas) #obs: necessário testar o laço for
+print(f'A próxima conta cadastrada será {conta_contador}.Conta cadastrada:{contas_cadastradas}\nCadastro do cliente:{cadastros_clientes}')'''
+
+for i in range(0,4):
+    criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas)
 
 while True:
 
