@@ -75,9 +75,9 @@ def cpf_check(): # função para conferir se o cpf é formato válido
         else:
             return cpf
 
-def criar_cadastro():
+def criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas):
     usuario = []
-    cadastros = []
+    cadastros_clientes
     nome = str(input('Digite seu nome: ')).lower().capitalize().strip()
     nascimento = ler_nascimento() #chama a função para conferir a data de nascimento
     cpf = cpf_check() #chama a função cpf para conferir a data de nascimento
@@ -87,17 +87,23 @@ def criar_cadastro():
     n = int(input('Digite o número da sua residência: '))
     bairro = str(input('Digite o bairro onde mora: ')).lower().capitalize().strip()
     endereço = f'{rua},{n} - bairro:{bairro} - {cidade}/{estado}.'
-    for item in cadastros:
+    for item in cadastros_clientes:
         print('teste de entrada')
         if cpf in item:
             print('CPF já cadastrado. Refaça o cadastro do CPF')
             usuario.clear
             cpf = cpf_check
     usuario = [nome,nascimento,cpf,endereço]
-    cadastros.append(usuario[:])
-    usuario.clear
+    cadastros_clientes.append(usuario[:])
+    usuario.clear #limpa a lista temporária do usuário momentaneo após salvar no cadastro permanente
+    criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas,cadastros_clientes) # associa o novo usuário a uma nova conta
+    return conta_contador,contas_cadastradas,cadastros_clientes
 
 
-def criar_conta_corrente():
-    conta = str(input('Digite o número da conta: '))
+def criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas,cadastros_clientes):
+    contas_cadastradas #lista de contas cadastradas
+    conta_contador  #move a sequência após associar a um cliente.
+    contas_cadastradas.extend([cadastros_clientes[:],conta_contador,AGENCIA])
+    conta_contador += 1
+    return contas_cadastradas,conta_contador
     

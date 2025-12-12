@@ -18,10 +18,14 @@ limite = 500
 extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
-cadastros = []
+cadastros_clientes = []
+contas_cadastradas = []
 AGENCIA = '0001'
+conta_contador = 1
 
-criar_cadastro() #obs: necessário testar o laço for
+
+
+criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas) #obs: necessário testar o laço for
 
 while True:
 
@@ -49,6 +53,5 @@ while True:
 
     elif opcao == "q":
         break
-
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
