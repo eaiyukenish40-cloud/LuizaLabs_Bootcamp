@@ -24,12 +24,18 @@ AGENCIA = '0001'
 conta_contador = 1
 
 print('Seja bem vindo ao seu primeiro acesso')
-conta_contador = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_final) #recebe o valor de retorno do próximo número da conta a ser retornada.
+conta_contador, cpf = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_final) #recebe o valor de retorno do próximo número da conta a ser retornada.
 
 
 while True:
-
     opcao = str(input(menu)).strip().lower()
+
+    if conta_contador = 1:
+        if str(input('Não há conta cadastrada para este cpf. Deseja criar? \n[S].\n[N].\n')).strip().upper()[0] == 'S':
+            conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario)
+        else:
+            break
+    
 
     if opcao == "d":
        saldo, extrato = deposito(saldo,extrato) # a função retorna um tupla
@@ -39,7 +45,6 @@ while True:
     elif opcao == "s":
         if numero_saques < LIMITE_SAQUES: # melhoria. Se o número de saque for excedido, não executa a função.
             extrato, saldo, numero_saques = saque(limite=limite,saldo=saldo,numero_saques=numero_saques,limite_saques=LIMITE_SAQUES,extrato=extrato) # retorna extrato,saldo,numero_saques
-            
 
         else:
             print(f'Você atingiu o limite de saques por hoje. Volte amanhã')
@@ -49,6 +54,7 @@ while True:
         extrato_view(extrato,saldo=saldo)
 
     elif opcao == "q":
+        extrato_temp = [extrato]#associa o extrato a conta 
         break
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
