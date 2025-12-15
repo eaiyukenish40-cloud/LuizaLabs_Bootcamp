@@ -9,7 +9,9 @@ menu = """
 [d] Depositar
 [s] Sacar
 [e] Extrato
+[c] Criar conta
 [q] Sair
+
 
 => """
 
@@ -22,6 +24,8 @@ cadastros_clientes = []
 contas_cadastradas_final = []
 AGENCIA = '0001'
 conta_contador = 1
+num_contas = 0
+
 
 print('Seja bem vindo ao seu primeiro acesso')
 conta_contador, cpf = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_final) #recebe o valor de retorno do próximo número da conta a ser retornada.
@@ -30,7 +34,7 @@ conta_contador, cpf = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,c
 while True:
     opcao = str(input(menu)).strip().lower()
 
-    if conta_contador == 1:
+    if conta_contador == 1: #acionado apenas no primeiro laço caso não foi criada uma conta no início.
         if str(input('Não há conta cadastrada para este cpf. Deseja criar? \n[S].\n[N].\n')).strip().upper()[0] == 'S':
             conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,cadastros_clientes[0])
         else:
@@ -56,6 +60,21 @@ while True:
     elif opcao == "q":
         extrato_temp = [extrato]#associa o extrato a conta 
         break
+    elif opcao == 'c':
+        
+        if num_contas < 3:
+            for conta in contas_cadastradas_final: #faz a contagem do numero de contas existentes
+                print(conta[0])
+                if cpf in conta[0]:
+                    num_contas += 1
+            print(num_contas)
+            conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,cadastros_clientes[len(cadastros_clientes)-1])
+            print(contas_cadastradas_final)
+        else:
+            print(contas_cadastradas_final)
+            print('Você atingiu o número de contas por usuário')
+
+
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
 
