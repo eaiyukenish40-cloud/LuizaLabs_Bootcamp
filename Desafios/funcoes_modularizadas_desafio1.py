@@ -110,7 +110,6 @@ def criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_
 def criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario):
     contas_cadastradas_final.append([usuario[:],conta_contador,AGENCIA])
     conta_contador += 1 #numero da conta cadastrada do usuário 
-    
     print('Conta criada com sucesso')
     return conta_contador
     

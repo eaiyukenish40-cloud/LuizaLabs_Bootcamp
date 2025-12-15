@@ -25,6 +25,7 @@ contas_cadastradas_final = []
 AGENCIA = '0001'
 conta_contador = 1
 num_contas = 0
+indices_contas = [] # verifica em quais posições está cadastrado as contas
 
 
 print('Seja bem vindo ao seu primeiro acesso')
@@ -58,13 +59,17 @@ while True:
         extrato_view(extrato,saldo=saldo)
 
     elif opcao == "q":
-        extrato_temp = [extrato]#associa o extrato a conta 
+        '''for indice,conta in enumerate(contas_cadastradas_final): #faz a contagem do numero de contas existentes
+            if cpf in conta[0]:
+                indices_contas.append(indice)
+        
+        extrato_temp = [extrato]#associa o extrato a conta''' #proxima melhoria
+        num_contas = 0# reseta a variável do usuário
         break
     elif opcao == 'c':
         
         if num_contas < 3:
             for conta in contas_cadastradas_final: #faz a contagem do numero de contas existentes
-                print(conta[0])
                 if cpf in conta[0]:
                     num_contas += 1
             print(num_contas)
