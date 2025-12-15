@@ -3,7 +3,7 @@ Novas Funções:
 Criar uma nova função para cadastrar usuário (cliente).
 Criar uma nova função para cadastrar conta bancária'''
 
-from funcoes_modularizadas_desafio1 import saque,deposito,extrato_view, criar_cadastro,criar_conta_corrente
+from funcoes_modularizadas_desafio1 import saque,deposito,extrato_view, criar_cadastro,criar_conta_corrente,cpf_check
 menu = """
 
 [d] Depositar
@@ -23,15 +23,9 @@ contas_cadastradas_final = []
 AGENCIA = '0001'
 conta_contador = 1
 
+print('Seja bem vindo ao seu primeiro acesso')
+conta_contador = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_final) #recebe o valor de retorno do próximo número da conta a ser retornada.
 
-'''
-conta_contador,contas_cadastradas,cadastros_clientes = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas) #obs: necessário testar o laço for
-
-print(f'A próxima conta cadastrada será {conta_contador}.Conta cadastrada:{contas_cadastradas}\nCadastro do cliente:{cadastros_clientes}')'''
-
-for i in range(0,4):
-    conta_contador = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_final) #recebe o valor de retorno do próximo número da conta a ser retornada.
-    
 
 while True:
 
@@ -44,10 +38,9 @@ while True:
 
     elif opcao == "s":
         if numero_saques < LIMITE_SAQUES: # melhoria. Se o número de saque for excedido, não executa a função.
-            resultado_saque = saque(limite=limite,saldo=saldo,numero_saques=numero_saques,limite_saques=LIMITE_SAQUES,extrato=extrato) # retorna extrato,saldo,numero_saques
-            extrato = resultado_saque[0]
-            saldo = resultado_saque[1]
-            numero_saques = resultado_saque[2]
+            extrato, saldo, numero_saques = saque(limite=limite,saldo=saldo,numero_saques=numero_saques,limite_saques=LIMITE_SAQUES,extrato=extrato) # retorna extrato,saldo,numero_saques
+            
+
         else:
             print(f'Você atingiu o limite de saques por hoje. Volte amanhã')
         
@@ -59,3 +52,4 @@ while True:
         break
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
+

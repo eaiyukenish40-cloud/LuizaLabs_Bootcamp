@@ -82,6 +82,7 @@ def criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_
         while cpf in item: #loop para impedir o usuário de cadastrar um cpf já existente no banco
             print('CPF já cadastrado. Tente novamente')
             cpf = cpf_check()
+   
     # lower().capitalize().strip() é padronização do formato do input.
     nome = str(input('Digite seu nome: ')).lower().capitalize().strip()
     nascimento = ler_nascimento() #chama a função para conferir a data de nascimento
@@ -93,19 +94,21 @@ def criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_
     endereço = f'{rua},{n} - bairro:{bairro} - {cidade}/{estado}.'
     usuario = [nome,nascimento,cpf,endereço]
     cadastros_clientes.append(usuario[:]) #adiciona o novo usuário na lista antes de chamar
-    contas_cadastradas_final, conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario) # associa o novo usuário a uma nova conta
+
+    #adição de funcionalidadeas
+    
+    if str(input('Deseja criar uma conta? \n[S].\n[N].\n')).upper().strip()[0] == 'S':
+        contas_cadastradas_final, conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario) # associa o novo usuário a uma nova conta
     
     print('Usuário Cadastrado com sucesso!')
-    usuario.clear #limpa a lista temporária do usuário momentaneo após salvar no cadastro permanente   
+    usuario.clear() #limpa a lista temporária do usuário momentaneo após salvar no cadastro permanente   
 
     return conta_contador
 
 
 def criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario):
-    contas_cadastradas_temp = []
-    contas_cadastradas_temp.extend([usuario[:],conta_contador,AGENCIA]) # salva as informações em uma lista. Será salvo a lista de informações do usuário, na posição 0 e as demais posições, os outros parametros.
-    contas_cadastradas_final.append(contas_cadastradas_temp[:])
-    contas_cadastradas_temp.clear #reseta a lista temporária
+    contas_cadastradas_final.append([usuario[:],conta_contador,AGENCIA])
+
     conta_contador += 1
     return contas_cadastradas_final,conta_contador
     
