@@ -19,7 +19,7 @@ extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
 cadastros_clientes = []
-contas_cadastradas = []
+contas_cadastradas_final = []
 AGENCIA = '0001'
 conta_contador = 1
 
@@ -30,16 +30,15 @@ conta_contador,contas_cadastradas,cadastros_clientes = criar_cadastro(cadastros_
 print(f'A próxima conta cadastrada será {conta_contador}.Conta cadastrada:{contas_cadastradas}\nCadastro do cliente:{cadastros_clientes}')'''
 
 for i in range(0,4):
-    criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas)
+    conta_contador = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_final) #recebe o valor de retorno do próximo número da conta a ser retornada.
+    
 
 while True:
 
     opcao = str(input(menu)).strip().lower()
 
     if opcao == "d":
-       resultado_deposito = deposito(saldo,extrato) # a função retorna um tupla
-       saldo = resultado_deposito[0]
-       extrato = resultado_deposito[1]
+       saldo, extrato = deposito(saldo,extrato) # a função retorna um tupla
        print(f'Depósito concluído com sucesso. R${saldo}')
     
 
