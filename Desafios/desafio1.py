@@ -32,7 +32,7 @@ while True:
 
     if conta_contador == 1:
         if str(input('Não há conta cadastrada para este cpf. Deseja criar? \n[S].\n[N].\n')).strip().upper()[0] == 'S':
-            conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario)
+            conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,cadastros_clientes[0])
         else:
             break
     
