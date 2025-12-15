@@ -30,7 +30,7 @@ conta_contador, cpf = criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,c
 while True:
     opcao = str(input(menu)).strip().lower()
 
-    if conta_contador = 1:
+    if conta_contador == 1:
         if str(input('Não há conta cadastrada para este cpf. Deseja criar? \n[S].\n[N].\n')).strip().upper()[0] == 'S':
             conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario)
         else:
