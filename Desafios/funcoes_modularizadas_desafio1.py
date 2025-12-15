@@ -97,10 +97,11 @@ def criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_
 
     #adição de funcionalidadeas
     
-    if str(input('Deseja criar uma conta? \n[S].\n[N].\n')).upper().strip()[0] == 'S':
+    if str(input('Deseja criar uma conta? \n[S].\n[N].\n')).strip().upper()[0] == 'S':
+        print('Criando conta...')
         contas_cadastradas_final, conta_contador = criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario) # associa o novo usuário a uma nova conta
     
-    print('Usuário Cadastrado com sucesso!')
+    print('Cadastro finalizado com sucesso!')
     usuario.clear() #limpa a lista temporária do usuário momentaneo após salvar no cadastro permanente   
 
     return conta_contador
@@ -108,7 +109,7 @@ def criar_cadastro(cadastros_clientes,AGENCIA,conta_contador,contas_cadastradas_
 
 def criar_conta_corrente(AGENCIA,conta_contador,contas_cadastradas_final,usuario):
     contas_cadastradas_final.append([usuario[:],conta_contador,AGENCIA])
-
     conta_contador += 1
+    print('Conta criada com sucesso')
     return contas_cadastradas_final,conta_contador
     
