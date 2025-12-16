@@ -1,0 +1,47 @@
+# Sistema Bancário Modularizado em Python
+
+Este repositório contém a resolução de um desafio de código em Python, focado na criação de um sistema bancário simples via terminal. O projeto evoluiu de um script único para uma estrutura modularizada, aplicando boas práticas de programação.
+
+## 📋 Descrição do Projeto
+
+O programa simula as operações básicas de um banco, permitindo a criação de usuários e contas correntes, além de realizar movimentações financeiras.
+
+**Principais funcionalidades:**
+* **Cadastro de Usuários:** Coleta de informações detalhadas (CPF, nome, endereço completo).
+* **Gestão de Contas:** Permite criar até 3 contas bancárias por usuário cadastrado.
+* **Operações Bancárias:** Simulação de Depósito, Saque e Visualização de Extrato.
+
+## 🚀 Tecnologias e Conceitos Aplicados
+
+* **Linguagem:** Python 3
+* **Estruturas de Dados:** Listas (`list`) e Tuplas.
+* **Controle de Fluxo:** Loops (`while`, `for`) e Condicionais (`if/else`).
+* **Modularização:** Separação de responsabilidades em funções dedicadas.
+* **Argumentos de Função:** Uso avançado de argumentos posicionais (`/`) e nomeados (`*`) para maior segurança na passagem de parâmetros.
+* **Tratamento de Erros:** Blocos `try/except` para validar entradas de dados.
+
+## 🛠️ Melhorias e Implementações
+
+Além dos requisitos básicos do desafio, foram implementadas as seguintes melhorias para trazer mais **robustez** à versão final:
+
+1.  **Validações Personalizadas (Helper Functions):**
+    * `cpf_check`: Limita a entrada aos 11 dígitos e trata erros de tipo.
+    * `ler_nascimento`: Força o usuário a digitar no padrão `dd/mm/aaaa` e impede datas futuras, utilizando a biblioteca `datetime`.
+    * `check_estado`: Verifica se a sigla do estado (UF) digitada é válida.
+2.  **Otimização de Processamento:**
+    * A verificação do limite de saques diários foi movida para *antes* da chamada da função `saque`. Isso evita a execução desnecessária da função caso o usuário já tenha excedido o limite.
+3.  **Experiência do Usuário (UX):**
+    * Tratamento de erros nos inputs para evitar que o programa quebre com dados inválidos.
+
+## 📂 Estrutura dos Arquivos
+
+* `desafio1.py`: Arquivo principal (Main). Contém o menu de navegação e o loop principal de execução.
+* `funcoes_modularizadas_desafio1.py`: Módulo contendo todas as funções lógicas (saque, depósito, validadores, criadores de conta).
+
+## 🔧 Como Executar
+
+Certifique-se de ter o Python instalado em sua máquina.
+
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/SEU-USUARIO/NOME-DO-REPO.git](https://github.com/SEU-USUARIO/NOME-DO-REPO.git)
