@@ -1,0 +1,3 @@
+Teste de escrita do arquivo
+Escrita das linhas pelo write lines.
+Segunda linha do lines.

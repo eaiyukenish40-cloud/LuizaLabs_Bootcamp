@@ -1,0 +1,16 @@
+import os
+import shutil
+from pathlib import Path
+
+ROOT_PATH = Path(__file__).parent #obtem o nome do caminho do arquivo
+print(f'local: {ROOT_PATH}')
+#os.mkdir(ROOT_PATH / 'nova_pasta' ) #cria um novo diretório
+
+'''arquivo = open(ROOT_PATH / 'novo.txt', 'w')
+arquivo.close
+
+os.rename(ROOT_PATH / 'novo.txt', ROOT_PATH / 'alteracao.txt')'''
+
+#os.remove(ROOT_PATH / 'novo.txt')
+
+shutil.move(ROOT_PATH / 'novo2.txt',ROOT_PATH / 'nova_pasta' / 'novo2.txt')

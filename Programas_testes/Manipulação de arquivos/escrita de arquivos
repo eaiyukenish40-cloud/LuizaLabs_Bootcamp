@@ -1,0 +1,8 @@
+from pathlib import Path
+
+# Cria o caminho de forma agnóstica ao sistema operacional
+arquivo = open("C:/Users/gusta/OneDrive/Documentos/GitHub/LuizaLabs_Bootcamp/Programas_testes/Manipulação de arquivos/arquivo_Teste.txt","w")
+
+arquivo.write('Teste de escrita do arquivo')
+arquivo.writelines(['\nEscrita das linhas pelo write lines.','\nSegunda linha do lines.'])
+arquivo.close()
