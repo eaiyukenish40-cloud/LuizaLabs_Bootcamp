@@ -1,0 +1,28 @@
+class Foo:
+    def __init__(self, x = None):
+        self._x = x 
+
+    @property
+    def x(self):
+       return self._x or 0
+
+    @x.setter # modificação do valor via atribuição
+    def x(self,valor):
+        _x = self._x or 0
+        _valor = valor or 0
+        self._x = _x + _valor
+        return self._x
+    
+    @x.deleter
+    def x (self):
+        self._x = 0
+        return self._x
+    
+    '''def __str__(self):
+        return f'{self.__class__.__name__}'''
+
+foo = Foo(10)
+print(f'Nome da classe é: ',foo)
+foo.x = 10 #não chama o método, ele atribui o valor através da property definida
+print(foo.x)
+

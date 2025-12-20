@@ -1,0 +1,18 @@
+class Passaro:
+    def voar(self):
+        pass
+
+class Pardal(Passaro):
+    def voar(self):
+        print('Pardal voa')
+
+class Galinha(Passaro):
+    print('Galinha não voa')
+
+def passaro_voa(classe):
+    classe.voar()
+
+'''p1 = Pardal()
+passaro_voa(p1)'''
+
+passaro_voa(Galinha())

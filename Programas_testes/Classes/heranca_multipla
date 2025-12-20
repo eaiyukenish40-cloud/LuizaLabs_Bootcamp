@@ -1,0 +1,38 @@
+class animal:
+    def __init__(self,n_patas):
+        self.patas = n_patas
+
+    def __str__(self):
+        return f'{self.__class__.__name__}: {', '.join([f'{chave} = {valor}' for chave, valor in self.__dict__.items()])} '
+
+class mamifero(animal):
+    def __init__(self, cor_pelo,**kw):
+        self.cor_pelo = cor_pelo   
+        super().__init__(**kw)
+
+class ave(animal):
+    def __init__(self, cor_bico,**kw):
+        self.cor_bico = cor_bico
+        super().__init__(**kw)
+
+class leao(mamifero):
+    pass
+
+class gato(mamifero):
+    pass
+
+class cachorro(mamifero):
+    pass
+
+class ornitorrinco(ave,mamifero):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+        print(self.)
+    
+
+
+bicho = gato(n_patas = 4, cor_pelo='marrom')
+print(bicho)
+
+bicho_2 = ornitorrinco(n_patas = 4, cor_pelo = 'marrom', cor_bico='preto')
+print(bicho_2)
