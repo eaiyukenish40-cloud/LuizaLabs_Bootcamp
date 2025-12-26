@@ -1,0 +1,604 @@
+Todas as 40 Palavras Restritas do Python – Lista
+Aprenda como e quando utilizar!
+
+
+
+No Python, existem 40 palavras restritas que desempenham papéis fundamentais na estruturação e funcionalidade do código.
+
+Essas palavras reservadas são parte essencial do Python, o que significa que você não pode utilizá-las como identificadores, ou seja, como nomes de variáveis, funções, classes, módulos ou objetos.
+
+Nesta postagem, você encontrará as 40 palavras restritas do Python, suas respectivas funcionalidades e aplicações para construir um código mais eficiente.
+
+
+
+O que São Palavras Restritas do Python?
+
+
+
+1 – False
+
+2 – True
+
+3 – None
+
+4 – if
+
+5 – not
+
+6 – and
+
+7 – or
+
+8 – else
+
+ 9 – elif
+
+10 – is
+
+11 e 12 – match e case
+
+13 – Underscore _
+
+14 – for
+
+15 – in
+
+16 – continue
+
+17 – break
+
+18 – while
+
+19 – import
+
+20 – as
+
+21 – from
+
+22 – def
+
+23 – return
+
+24 – pass
+
+25 – global
+
+26 – nonlocal
+
+27 – raise
+
+28 – assert
+
+29 – lambda
+
+30 – del
+
+31 – try
+
+32 – except
+
+33 – finally
+
+34 – with
+
+35 – yield
+
+36 – async
+
+37 – await
+
+38 – class
+
+39 – Operadores
+
+40 – Funções Nativas
+
+
+
+O que São Palavras Restritas do Python?
+As palavras restritas, também conhecidas como palavras reservadas, são termos pré-definidos pela linguagem de programação para realizar operações específicas.
+
+
+
+São palavras que, por padrão, já realizam alguma função ou representam alguma ferramenta do Python.
+
+Por esse motivo, você não pode usá-las para outros propósitos, como nomear variáveis ou funções, pois isso causaria conflitos e erros de sintaxe.
+
+
+
+Você com certeza já conhece, usou ou se deparou com algumas dessas palavras, mas a ideia dessa aula é que você conheça cada uma delas e saiba como utilizá-las corretamente, evitando erros e otimizando seu código.
+
+Por isso, eu separei essa lista completa com as palavras restritas do Python!
+
+1 – False
+Representa um valor booleano de falso. Essa palavra é usada para indicar que uma condição não é verdadeira.
+
+Você pode atribuir o valor de False a uma variável quando quiser indicar que uma condição não foi atingida ainda.
+
+Por exemplo, se um vendedor não bateu a meta de vendas, a variável bateu_meta pode ser definida como False.
+
+bateu_meta = False
+2 – True
+O oposto de False, essa palavra representa um valor booleano verdadeiro. É usada para indicar que uma condição é verdadeira no código.
+
+Essas duas palavras (True e False) são usadas para variáveis booleanas e para verificar e tratar condições dentro do código.
+
+bateu_meta = True
+Em Python, True e False também podem ser representados por 1 e 0, respectivamente.
+
+3 – None
+Representa a ausência de um valor ou um valor nulo. Essa palavra é usada quando uma variável ou função não possui um valor atribuído.
+
+Por exemplo, ao desenvolver um código que calcula se um vendedor bateu a meta, você pode iniciar a variável bateu_meta como None e, após os cálculos necessários, atribuir um valor a essa variável. Esse valor pode vir de uma função ou de um bloco do código.
+
+bateu_meta = None
+bateu_meta = calcular_venda()
+4 – if
+Essa palavra reservada é uma das estruturas condicionais no Python. Ela inicia uma instrução condicional que executará um bloco de código se uma determinada condição for verdadeira.
+
+Por exemplo, um código que verifica se as vendas foram maiores do que a meta.
+
+vendas = 1000
+meta = 500
+
+if vendas > meta:
+    print("Bateu a meta")
+Print da mensagem "bateu a meta", resultado do if Python
+
+Se as vendas forem maiores que a meta, o código imprime “Bateu a meta”. Caso contrário, essa linha não será executada.
+
+5 – not
+A palavra not no Python é um operador lógico que inverte o valor booleano de uma expressão (transforma verdadeiro em falso e vice-versa).
+
+Por exemplo, podemos verificar se um funcionário não está presente em uma lista de funcionários, combinando o if com o not.
+
+funcionarios = ["Lira", "Alon", "Amanda"]
+
+if not "Marcus" in funcionarios:
+    print("Marcus é um funcionário novo")
+Print da mensagem "Marcus é um funcionário novo", resultado do if not no Python
+
+6 – and
+Outro operador lógico, o and é utilizado para analisar duas condições simultaneamente. Ele retorna verdadeiro se ambas as expressões forem verdadeiras.
+
+Podemos utilizá-lo para verificar se as vendas da loja e do vendedor atingiram suas metas.
+
+vendas_loja = 10000
+vendas_vendedor = 1000
+
+if vendas_loja > 8000 and vendas_vendedor > 800:
+    print("Vendedor ganhará bônus")
+Print da mensagem "Vendedor ganhará bônus", resultado do if com and no Python
+
+Caso uma das condições não seja verdadeira (vendedor ou loja não atingiram a meta), a mensagem não será exibida.
+
+7 – or
+Esse operador também é utilizado para analisar mais de uma condição, porém ele retorna verdadeiro se pelo menos uma das expressões for verdadeira.
+
+Por exemplo, um vendedor pode ganhar bônus se a loja ou ele mesmo atingir suas metas.
+
+vendas_loja = 10000
+vendas_vendedor = 500
+
+if vendas_loja > 8000 or vendas_vendedor > 800:
+    print("Vendedor ganhará bônus")
+Print da mensagem "Vendedor ganhará bônus", resultado do if com and no Python
+
+Ou seja, para que a mensagem “Vendedor ganhará bônus” não seja exibida, ambas as condições precisariam ser falsas.
+
+8 – else
+O else também faz parte das estruturas condicionais do Python. Essa palavra define um bloco de código que deve ser executado se todas as condições anteriores não forem verdadeiras.
+
+Com essa estrutura condicional, podemos analisar diferentes cenários. Por exemplo, se tanto a loja quanto o vendedor atingirem suas metas, o vendedor ganha bônus. Caso contrário (else), o vendedor não ganhará o bônus.
+
+vendas_loja = 7000
+vendas_vendedor = 1000
+
+if vendas_loja > 8000 and vendas_vendedor > 800:
+    print("Vendedor ganhará bônus")
+else:
+    print("Vendedor não ganhará bônus")
+Print da mensagem "Vendedor não ganhará bônus", resultado do else no Python
+
+ 9 – elif
+Abreviação de “else if”, essa palavra é usada após uma instrução if para verificar outra condição caso a primeira não seja verdadeira.
+
+O uso de blocos elif permite adicionar novas condições sem limitar-se ao simples verdadeiro/falso dos blocos if/else.
+
+Um exemplo seria premiar um vendedor com uma lembrancinha caso ele atinja sua meta individualmente, mesmo que a loja não tenha alcançado sua meta.
+
+vendas_loja = 7000
+vendas_vendedor = 1000
+
+if vendas_loja > 8000 and vendas_vendedor > 800:
+    print("Vendedor ganhará bônus")
+elif vendas_vendedor > 800:
+    print("Vendedor ganhará uma lembrancinha")
+else:
+    print("Vendedor não ganhará bônus")
+Print da mensagem "Vendedor ganhará uma lembrancinha", resultado do elif no Python
+
+10 – is
+A palavra is é um operador de comparação em Python que verifica se duas variáveis referenciam o mesmo objeto na memória. Em outras palavras, ele verifica a identidade entre objetos, não apenas se os valores são iguais.
+
+Por exemplo, ao usar is para comparar duas variáveis que receberam o mesmo valor, o resultado será verdadeiro apenas se ambas as variáveis apontarem para o mesmo objeto na memória.
+
+No entanto, ao comparar listas ou outros objetos complexos (dicionários, tuplas, etc.), mesmo que armazenem o mesmo valor, eles não serão considerados iguais. Isso ocorre porque cada lista ou objeto é armazenado em um local distinto na memória.
+
+vendas = [1000]
+novas_vendas = [1000]
+
+if vendas is novas_vendas:
+    print("Tudo igual")
+else:
+    print("São diferentes")
+Uso do is no python
+
+11 e 12 – match e case
+Essas duas palavras são usadas em conjunto para definir diferentes padrões a serem verificados e o bloco de código que deve ser executado para cada caso.
+
+Essas palavras-chave servem para substituir múltiplas condições if no seu código ao analisar uma determinada variável.
+
+Por exemplo, ao determinar o nome do mês baseado em um número (1 a 12), podemos utilizar match e case para simplificar a lógica condicional.
+
+mes = 1
+match mes:
+    case 1:
+        print("Janeiro")
+    case 2:
+        print("Fevereiro")
+    case 3:
+        print("Março")
+Print "Janeiro" resultado do match e case no Python
+
+13 – Underscore _
+O símbolo do underscore (ou underline) _ tem diversas aplicações em Python. Ele pode ser usado como uma variável genérica ou temporária para indicar que um valor não será utilizado ou não tem importância futura no código.
+
+Dentro de um match, o underscore pode ser usado como curinga para representar o “caso contrário”, quando nenhum dos outros casos é atendido.
+
+mes = 7
+match mes:
+    case 1:
+        print("Janeiro")
+    case 2:
+        print("Fevereiro")
+    case 3:
+        print("Março")
+    case _:
+        print("Outro mês")
+Print "Outro mês" resultado do match e case no Python
+
+14 – for
+O comando for inicia um loop, uma estrutura de repetição, que itera sobre elementos de uma sequência (como listas, strings ou tuplas). Ele é utilizado para executar repetidamente blocos de código.
+
+Por exemplo, imprimir uma mensagem várias vezes.
+
+for i in range(5):
+    print("Confira nosso Curso Completo Python Impressionador")
+Print da mensagem "Confira nosso Curso Completo Python Impressionador" usando for no Python
+
+15 – in
+O in é um operador de comparação que verifica se um item está presente em uma sequência, como uma lista ou uma string, como visto no exemplo da palavra not.
+
+Ele também pode ser utilizado no contexto de um loop for, indicando que cada iteração irá selecionar um item da lista ou do intervalo definido.
+
+16 – continue
+O comando continue faz com que o loop pule para a próxima iteração, ignorando o restante do código na iteração atual.
+
+Por exemplo, se quisermos exibir a mensagem “Confira nosso Curso Completo Python Impressionador” apenas para os valores pares de i (i % 2 == 0), podemos usar o continue para ignorar os valores ímpares.
+
+for i in range(5):
+    if i % 2 == 0:
+        print("Confira nosso Curso Completo Python Impressionador")
+    else:
+        continue
+Print da mensagem "Confira nosso Curso Completo Python Impressionador" usando continue no Python
+
+Como o continue ignora qualquer código subsequente na mesma iteração, você pode usá-lo para evitar ações específicas em determinadas condições dentro do loop. Veja outro exemplo.
+
+for i in range(5):
+    if i == 2:
+        continue
+    else:
+        print("Confira nosso Curso Completo Python Impressionador", i)
+    print("Código Executado")
+Print da mensagem "Confira nosso Curso Completo Python Impressionador" usando continue no Python
+
+Nesse caso, quando i é igual a 2, todo o código dentro do loop não é executado para aquela iteração.
+
+17 – break
+Diferente do continue, o comando break serve para interromper um loop imediatamente. Ou seja, quando uma condição específica é atingida, o break interrompe a execução do loop por completo.
+
+for i in range(5):
+    if i == 2:
+        break
+    print("Confira nosso Curso Completo Python Impressionador", i)
+Print da mensagem "Confira nosso Curso Completo Python Impressionador" usando break no Python
+
+18 – while
+A palavra reservada break é frequentemente usado em conjunto com a palavra while. O while inicia um loop que continua executando enquanto uma condição específica for verdadeira.
+
+Podemos criar loops infinitos com while True:, que só serão interrompidos quando um break for acionado.
+
+Por exemplo, vamos supor que temos uma lista chamada lista_vendas_funcionarios com 1.000.000 de valores, representando as vendas de cada funcionário.
+
+Podemos definir um loop while True: para iterar sobre essa lista e acumular as vendas até que uma meta seja atingida.
+
+vendas_totais = 0
+lista_vendas_funcionarios = [100] * 1000000
+meta_vendas = 20000
+i = 0
+
+while True:
+    vendas_funcionarios = lista_vendas_funcionarios[i]
+    vendas_totais = vendas_totais + vendas_funcionarios
+    i = i + 1
+    if vendas_totais > meta_vendas:
+        print("Meta batida no vendedor: ", i)
+        break
+While True com Break para calculo de metas
+
+O uso de while True: e break garante que o código pare imediatamente após atingir a meta, otimizando o processamento.
+
+Se não usássemos o comando break, o loop continuaria até que a variável i fosse maior que o tamanho da lista lista_vendas_funcionarios, resultando em um erro “IndexError”, ao tentar acessar um elemento inexistente na lista.
+
+19 – import
+A palavra reservada import é usada para importar módulos ou bibliotecas externas para o código Python, aumentando suas funcionalidades.
+
+Você pode usar esse comando tanto para bibliotecas padrão do Python quanto para bibliotecas externas instaladas manualmente.
+
+Por exemplo, podemos usar o comando import para trazer a biblioteca os, que permite trabalhar com operações relacionadas a arquivos e diretórios no sistema operacional.
+
+import os
+20 – as
+Essa palavra é utilizada em conjunto com import para atribuir um alias (apelido) a um módulo ou biblioteca importada.
+
+Um exemplo muito comum, que você pode encontrar em nossos conteúdos de ciência de dados, é o uso da biblioteca Pandas, geralmente importada como pd.
+
+import pandas as pd
+21 – from
+Também usada em conjunto com o import, essa palavra restrita do Python é usada quando queremos importar apenas partes específicas de um módulo ou biblioteca. Por exemplo, para importar apenas a função listdir() da biblioteca os.
+
+from os  import listdir
+Dessa forma, ao invés de importar a biblioteca toda, você pode apenas importar as funcionalidades que irá aplicar em seu código.
+
+22 – def
+A palavra def é usada para definir uma nova função. Por exemplo, ao criar uma função para calcular impostos.
+
+def calcular_imposto(imposto, taxa):
+    return imposto * taxa
+23 – return
+O comando return especifica o valor que uma função deve devolver. O retorno pode ser impresso ou atribuído a uma variável para reutilização.
+
+def calcular_imposto(imposto, taxa):
+    return imposto * taxa
+
+print(calcular_imposto(1000, 0.2))
+Return no Python
+
+24 – pass
+A palavra pass é usada como um placeholder para blocos de código ainda não implementados, mas que não devem causar erros de sintaxe. Ele permite testar outras partes do código sem precisar implementar toda a lógica de uma só vez.
+
+def calcular_imposto(imposto, taxa):
+    pass
+Quando o Python passar por esse comando, ele ignorará essa parte do código e continua a execução normalmente.
+
+25 – global
+O comando global declara que uma variável dentro de uma função tem escopo global (ou seja, está acessível fora da função).
+
+Quando uma variável é criada dentro de uma função, por padrão, ela é restrita a essa função, e só podemos acessar seu valor se a função a retornar.
+
+No entanto, ao declarar a variável como global dentro da função, podemos acessar e modificar seu valor fora dela, sem precisar retorná-la explicitamente.
+
+Por exemplo, vamos criar uma função que calcula o faturamento líquido e o imposto.
+
+def calcular_imposto(faturamento, taxa):
+    imposto = faturamento * taxa
+    global faturamento_liquido
+    faturamento_liquido = faturamento - imposto
+    return imposto
+
+imposto = calcular_imposto(1000, 0.2)
+print("Imposto foi de: ", imposto)
+print("Faturamento líquido foi de: ", faturamento_liquido)
+Variáveis globais no Python
+
+Neste exemplo, a variável faturamento_liquido foi definida como uma variável global, permitindo seu acesso fora da função calcular_imposto, mesmo que a função não a retorne diretamente.
+
+Vale ressaltar que criar variáveis globais dentro de funções geralmente não é recomendado, pois pode causar confusão.
+
+Outros desenvolvedores podem não saber quais variáveis estão sendo usadas internamente e modificar uma variável global acidentalmente pode levar a erros inesperados no código.
+
+26 – nonlocal
+A palavra reservada nonlocal declara que uma variável dentro de uma função aninhada (função definida dentro de outra função) se refere a uma variável existente no escopo da função imediatamente externa, mas não no escopo global.
+
+Ou seja, enquanto a palavra global torna a variável acessível em todo o código, nonlocal limita o escopo à função onde foi definida e à sua função externa imediata.
+
+def calcular_imposto(faturamento, taxa):
+    imposto = faturamento * taxa
+    def calcular_fat_liquido(faturamento, imposto):
+        nonlocal faturamento_liquido
+        faturamento_liquido = faturamento - imposto
+    faturamento_liquido = 0
+    calcular_fat_liquido(faturamento, imposto)
+    return imposto, faturamento_liquido
+
+imposto, fat_liquido = calcular_imposto(1000, 0.2)
+
+print("Imposto foi de: ", imposto)
+print("Faturamento líquido foi de: ", fat_liquido)
+nonlocal no Python
+
+É importante garantir que a variável a ser modificada com nonlocal tenha sido inicializada na função externa para evitar erros.
+
+27 – raise
+Essa palavra reservada é usada para lançar uma exceção de erro manualmente. Isso é útil para definir erros personalizados.
+
+Por exemplo, ao consumir os dados de uma API, você deseja garantir que os dados importados sejam valores inteiros. Caso contrário, deverá informar um erro do tipo TypeError.
+
+def vieram_api():
+    return "nada"
+
+vendas = vieram_api()
+if type(vendas) != int:
+    raise(TypeError)
+TypeError no Python
+
+28 – assert
+Usada para testes durante o desenvolvimento. Essa palavra verifica se uma condição é verdadeira; caso contrário, gera um erro de AssertionError.
+
+def vieram_api():
+    return "nada"
+
+vendas = vieram_api()
+assert type(vendas) == int
+assert no Python
+
+A verificação com assert é útil e prática para garantir que o código funcione como esperado durante testes e validações, sem que você precise definir um tipo de erro manualmente.
+
+29 – lambda
+Define uma função anônima (sem nome) em uma única linha, útil para funções pequenas e rápidas que realizam uma única tarefa.
+
+Por exemplo, para aumentar os salários dos funcionários de uma lista em 10% podemos aplicar uma função lambda em conjunto com o map.
+
+salarios = [1000, 2000, 3000]
+novos_salarios = list(map(lambda salario: salario * 1.1, salarios))
+print(novos_salarios)
+Salários atualizados com a função lambda
+
+30 – del
+A palavra del serve para deletar variáveis, itens de listas ou chaves de dicionários.
+
+salarios = {
+    "Lira": 1000,
+    "Alon": 2000,
+    "Amanda": 3000,
+}
+
+del salarios["Lira"]
+print(salarios)
+Resultado de del no Python
+
+31 – try
+A palavra try inicia um bloco de código que tentará ser executado, podendo capturar exceções de erro dentro dele. Essa palavra é usada em conjunto com a except.
+
+32 – except
+Define o bloco de código que será executado se um erro ocorrer no bloco try.
+
+Por exemplo, vamos novamente definir uma função para simular uma API e, a partir disso, calcular as vendas e o imposto.
+
+def vieram_api():
+    return 1000
+try:
+    vendas = vieram_api()
+    imposto = vendas / 2
+    print(vendas, imposto)
+except:
+    print("Erro na API")
+Nesse caso, se as vendas retornadas forem válidas (ex: 1000), o cálculo do imposto será realizado corretamente dentro do bloco try.
+
+Resultados corretos do imposto e vendas obtidos no bloco try
+
+Caso contrário, caso a API tenha retornado um valor que não é válido para o cálculo, como uma string, o bloco except será executado.
+
+def vieram_api():
+    return "1000"
+
+try:
+    vendas = vieram_api()
+    imposto = vendas / 2
+    print(vendas, imposto)
+except:
+    print("Erro na API")
+Resultado do bloco except
+
+Ou seja, ao utilizarmos o bloco try junto com o except, caso ocorra algum erro durante a execução do código dentro do bloco try, o programa não será interrompido. Em vez disso, ele irá automaticamente executar o bloco except.
+
+33 – finally
+Outra palavra restrita que pode ser executada em conjunto com os blocos try e excepet, é a palavra finally.
+
+Ela define um bloco de código que será sempre executado, independentemente de um erro ter ocorrido ou não.
+
+def vieram_api():
+    return "1000"
+
+try:
+    vendas = vieram_api()
+    imposto = vendas / 2
+    print(vendas, imposto)
+except:
+    print("Erro na API")
+finally:
+    print("Análise de vendas terminou")
+Print do texto "Análise de vendas terminou" contido no bloco finally
+
+34 – with
+Essa palavra é usada para simplificar o gerenciamento de recursos, como arquivos, garantindo que sejam fechados adequadamente após o uso.
+
+Ou seja, com a estrutura with conseguimos fechar automaticamente o arquivo após a execução dos comandos dentro desse bloco. Evitando futuros erros ao tentar abrir ou manipular o arquivo novamente.
+
+with open("salarios.txt", "r", encoding="utf-8") as arquivo:
+    texto = arquivo.read()
+
+print("Texto do arquivo:")
+print(texto)
+Lista de salários obtidos pelo with no Python
+
+35 – yield
+O yield é usado em funções geradoras para retornar um valor e pausar a execução da função, podendo continuar de onde parou.
+
+Um gerador em Python permite a leitura de grandes bases de dados sem sobrecarregar a memória do computador, lendo os dados linha por linha.
+
+Por exemplo, ao invés de carregar todo o conteúdo de um arquivo CSV, o gerador lê uma linha por vez, evitando travamentos no sistema.
+
+def ler_csv(nome_arquivo):
+    for linha in open(nome_arquivo, "r"):
+        yield linha
+
+vendas = ler_csv("vendas.csv")
+Esse é um tópico um pouco mais avançado em Python. Se você quiser aprofundar seu conhecimento sobre o uso de yield e como ele funciona, confira a aula: Yield em Python – Como Funciona
+
+36 – async
+A palavra reservada async é usada para definir funções assíncronas em Python.
+
+Essas funções permitem que o programa realize tarefas que podem levar mais tempo para serem concluídas, como chamadas para APIs externas, leitura de arquivos grandes, ou outras operações que envolvem espera.
+
+Ao utilizar async, o Python entende que essa função pode ser pausada em determinados pontos, permitindo que o programa execute outras operações simultaneamente enquanto aguarda a conclusão da tarefa assíncrona.
+
+37 – await
+A palavra await é utilizada dentro de funções definidas com async e permite que o programa pause a execução dessa função até que uma tarefa assíncrona seja concluída.
+
+Durante essa pausa, o Python libera o controle para executar outras tarefas, otimizando o uso dos recursos e melhorando o desempenho em programas que realizam múltiplas operações ao mesmo tempo.
+
+async def puxar_dados_api():
+    # Simulação de uma requisição que pode demorar
+    await request.get()
+Saiba mais em: Programação Assíncrona em Python
+
+38 – class
+O termo class é utilizado para definir uma nova classe, um conceito fundamental na programação orientada a objetos (POO).
+
+Uma classe pode ser vista como um molde para criar objetos, encapsulando dados e comportamentos relacionados.
+
+class Produto():
+    cor = "vermelho"
+    preco = 500
+39 – Operadores
+Além de todas essas palavras reservadas do Python que vimos até o momento, existem também os operadores básicos, como +, -, /, *, ^, %, entre outros. Você pode conferir mais sobre eles na aula sobre Operações Básicas do Python.
+
+40 – Funções Nativas
+Assim como os operadores básicos, existem funções nativas em Python, como len, int, float, etc. Caso você sobrescreva alguma dessas funções, elas não executarão mais suas funcionalidades originais para as quais foram desenvolvidas.
+
+
+
+Conclusão – Palavras Restritas do Python
+São palavras reservadas do Python, fundamentais para o desenvolvimento e execução de códigos.
+
+Compreender o significado e o uso adequado de cada uma dessas palavras é essencial para escrever códigos mais limpos, eficientes e de fácil manutenção, além de evitar erros e problemas ao utilizá-las incorretamente.
+
+Serve como uma referência completa que você pode consultar sempre que precisar entender o uso correto de cada uma dessas palavras.
+
+
+
+
+

@@ -229,12 +229,12 @@ class Deposito(Transacao):
             conta.historico.adicionar_transacao(self)
 
 
-def log_transacao(func):
+def log_transacao(func):#necessário posteriormente melhorar a formatação dos argumentos
     def envelope(*args, **kwargs):
         resultado = func(*args, **kwargs)
         data_hora = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
         ROOTPATH = Path(__file__).parent
-        PASTA = 'banco_dados_desafioarq'
+        PASTA = 'banco_dados_desafio3arq'
         try:
             os.makedirs(ROOTPATH / PASTA) #cria a pasta onde será salvo o arquivo
         except:
@@ -242,10 +242,10 @@ def log_transacao(func):
         # TODO: alterar a implementação para salvar em arquivo.
         try:
             with open(ROOTPATH / PASTA / 'log.txt','a', encoding='utf-8') as arquivo:# cria o arquivo. With função automática para fechar o arquivo. modo 'a' permite escrever sobre o arquivo sem perder o conteúdo já escrito
-                detalhes_func = f'[{data_hora}] Função {func.__name__}'
+                detalhes_func = f'[{data_hora}]: Função {func.__name__}'
                 detalhes_args = f'Executada com argumentos {args} e {kwargs}'
                 arquivo.write(f"{detalhes_func}. {detalhes_args if args != ([],) or kwargs !={} else 'Sem Argumentos'}. Retornou {resultado if resultado != None else 'sem resultado'}\n")
-                arquivo.write(f"{data_hora}: {func.__name__.upper()}\n")
+                arquivo.write(f"[{data_hora}]: {func.__name__.upper()}\n")
         except IOError as e:
             print(f'Problemas em abrir o arquivo: {e}')
         except UnicodeDecodeError as e:

@@ -1,0 +1,16 @@
+[2025/12/23 10:10:02] Função 'depositar' executada com argumentos ([],) e {}. Retornou None
+2025/12/23 10:10:02: DEPOSITAR
+[2025/12/23 10:31:35] Função depositar. Executada com argumentos ([],) e {}. Retornou sem resultado
+2025/12/23 10:31:35: DEPOSITAR
+[2025/12/23 10:31:50] Função sacar. Executada com argumentos ([],) e {}. Retornou sem resultado
+2025/12/23 10:31:50: SACAR
+[2025/12/23 10:33:25] Função sacar. Sem Argumentos. Retornou sem resultado
+2025/12/23 10:33:25: SACAR
+[2025/12/23 10:51:53] Função criar_conta. Executada com argumentos (1, [], []) e {}. Retornou sem resultado
+2025/12/23 10:51:53: CRIAR_CONTA
+[2025/12/23 10:52:41] Função criar_cliente. Executada com argumentos ([<PessoaFisica: ('141414')>],) e {}. Retornou sem resultado
+2025/12/23 10:52:41: CRIAR_CLIENTE
+[2025/12/23 10:53:07] Função criar_conta. Executada com argumentos (1, [<PessoaFisica: ('141414')>], [<ContaCorrente: ('0001', '1', 'gustavo')>]) e {}. Retornou sem resultado
+2025/12/23 10:53:07: CRIAR_CONTA
+[2025/12/23 10:53:29] Função depositar. Executada com argumentos ([<PessoaFisica: ('141414')>],) e {}. Retornou sem resultado
+2025/12/23 10:53:29: DEPOSITAR
