@@ -1,0 +1,5 @@
+import datetime
+import os
+
+
+lista = ["arroz", "batata", "banana", "arquivo"]
